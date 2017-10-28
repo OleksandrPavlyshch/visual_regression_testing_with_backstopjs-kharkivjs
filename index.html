@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Visual regression testing with BackstopJS - KharkivJS</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- bower:css-->
+    <!-- endbower-->
+    <link rel="stylesheet" href="css/vendor/screen-16x10.css">
+    <link rel="stylesheet" href="css/vendor/default.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Visual regression testing with BackstopJS - KharkivJS">
+    <meta property="og:description" content="Visual regression testing with BackstopJS - KharkivJS">
+    <meta property="og:site_name" content="Visual regression testing with BackstopJS - KharkivJS">
+    <meta property="og:image" content="https://oleksandrpavlyshch.github.io/visual_regression_testing_with_backstopjs-kharkivjs/img/preview.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="Visual regression testing with BackstopJS - KharkivJS">
+    <meta name="twitter:title" content="Visual regression testing with BackstopJS - KharkivJS">
+    <meta name="twitter:description" content="Visual regression testing with BackstopJS - KharkivJS">
+    <meta name="twitter:creator" content="me">
+    <meta name="twitter:image" content="https://oleksandrpavlyshch.github.io/visual_regression_testing_with_backstopjs-kharkivjs/img/preview.jpg"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="my template">
+<link rel="icon" type="image/png" sizes="228x228" href="/coast-228x228.png">
+<link rel="yandex-tableau-widget" href="/yandex-browser-manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="transpatent">
+<meta name="application-name" content="my template">
+<meta name="msapplication-TileColor" content="transpatent">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/apple-touch-startup-image-320x460.png">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-640x920.png">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-640x1096.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-750x1294.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/apple-touch-startup-image-1182x2208.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/apple-touch-startup-image-1242x2148.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/apple-touch-startup-image-748x1024.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/apple-touch-startup-image-768x1004.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-1496x2048.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-1536x2008.png">
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Visual regression testing with BackstopJS - KharkivJS</h1>
+      <p><a href="https://github.com/OleksandrPavlyshch">Oleksandr Pavlyshch – Front-end developer @ 
+Astound Commerce.</a></p>
+    </header>
+    <section class="slide black"><img class="cover" src="./img/dark-title.jpg" alt="conference title"></section>
+    <section class="slide title_header black"><img class="title-img" alt="my-photo" src="/img/lemurFace.png">
+      <h2>Visual regression testing <br>with BackstopJS.</h2>
+      <h3>Catch CSS curve balls.</h3>
+    </section>
+    <section class="slide centr-align">
+      <h2>Всем привет!</h2>
+      <div class="half">
+        <ul style="font-size: 30px; line-height: 1.4;">
+          <li class="next" style="margin-bottom: 22px;">Меня зовут Саша</li>
+          <li class="next" style="margin-bottom: 22px;">Front-end разработчик в Astound commerce</li>
+          <li class="next" style="margin-bottom: 22px;">Кредо: "Действия громче чем слова"</li>
+          <li class="next" style="margin-bottom: 22px;">Люблю челенджи</li>
+          <li class="next">Хобби: социальные танцы</li>
+        </ul>
+      </div><img alt="my-photo" src="img/my-photo2.jpg" style="float:right; width: 42%; box-shadow: 0 0 7px #666;">
+    </section>
+    <section class="slide centr-align">
+      <h2>Agenda</h2><br>
+      <p class="next" style="font-size: 48px; margin-bottom: 6px; line-height: 1.5;">Зачем тестировать визуальные регресии</p>
+      <p class="next" style="font-size: 48px; margin-bottom: 6px; line-height: 1.5;">Почему BacksopJs</p>
+      <p class="next" style="font-size: 48px; margin-bottom: 6px; line-height: 1.5;">Настройка</p>
+      <p class="next" style="font-size: 48px; margin-bottom: 6px; line-height: 1.5;">DEMO</p>
+    </section>
+    <section class="slide black"><img class="cover" src="./img/olsen_sisters.jpg" alt=""></section>
+    <section class="slide black"><img class="cover" src="./img/Game-of-Thrones-Meslisandre-old-and-young.jpg" alt=""></section>
+    <section class="slide">
+      <h2>Зачем?</h2>
+      <p>¯_| ಠ ∧ ಠ |_/¯</p>
+      <ul>
+        <li class="next">У сайта много страниц и состояний для разных устройств</li>
+        <li class="next">Большая команда и много новичков</li>
+        <li class="next">Что-то поправил Back-end разработчик</li>
+        <li class="next">Несколько файлов CSS на один сайт</li>
+        <li class="next">Один CSS файл на несколько сайтов ( и такое бывает) (o_O)</li>
+        <li class="next">Вы ведете курсы Front-End разработчиков</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2 class="shout">История о баге</h2>
+    </section>
+    <section class="slide"><img class="cover" src="/img/menu_normal.jpg" alt="menu_normal"></section>
+    <section class="slide"><img class="cover" src="/img/menu_bug.jpg" alt="menu_bug"></section>
+    <section class="slide galaxy_tab_slide"><img class="cover" src="/img/galaxy_tab.jpg" alt="galaxy_tab"></section>
+    <section class="slide">
+      <h2>Критерии выбора</h2><br>
+      <ul>
+        <li class="next">Окупится ли польза от изучения технологии?</li>
+        <li class="next">Какое у нее будущее?</li>
+        <li class="next">Насколько легко и быстро внедрить её в проэкт?</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2>Какие варианты?</h2><br>
+      <ul>
+        <li class="next">PhantomCSS</li>
+        <li class="next">BackstopJS</li>
+        <li class="next">Selenium</li>
+        <li class="next">Gemini</li>
+        <li class="next">BrowserStack</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <div class="half" style="vertical-align: top;width:48%; padding: 0;">
+        <h2>BackstopJS</h2><br>
+        <ul style="font-size: 26px;">
+          <li>Latest commit 25/10/2017</li>
+          <li>Inital commit 15/10/2014</li>
+          <li>Last version 3.0.31</li>
+          <li>730 downloads in the last day</li>
+          <li>4,537 downloads in the last week</li>
+          <li>22,137 downloads in the last month</li>
+          <li>16 open pull requests on GitHub</li>
+        </ul>
+      </div>
+      <div class="half" style="vertical-align: top;width:48%; padding: 0 0 0 5%;">
+        <h2>PhantomCSS</h2><br>
+        <ul style="font-size: 26px;">
+          <li>Latest commit 11/10/2017</li>
+          <li>Inital commit 6/11/2012</li>
+          <li>Last version 1.2.0</li>
+          <li>402 downloads in the last day</li>
+          <li>2,315 downloads in the last week</li>
+          <li>9,838 downloads in the last month</li>
+          <li>One open pull request on GitHub</li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <h2>BackstopJS</h2>
+      <p><b>Catch CSS curve balls.</b></p>
+      <p>CLI инструмент для автоматизации тестирования визуальных регресий.</p>
+      <ul>
+        <li>Chrome Headless, Phantom and Slimer</li>
+        <li>Resemble JS</li>
+        <li>ChromyJS and CasperJS</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2>Возможности</h2>
+      <ul>
+        <li class="next">Можно настроить за пять минут</li>
+        <li class="next">Тестирование отдельных блоков</li>
+        <li class="next">Удаление или скрытие элементов со страницы</li>
+        <li class="next">Детальные отчеты в браузере и CLI</li>
+        <li class="next">CI интеграция с JUnit отчетами</li>
+        <li class="next">Возможность использовать глобально или интегрировать с npm и Gulp</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2>Установка</h2><br>
+      <p class="next">
+        <mark>$ npm install -g backstopjs</mark> - установка
+      </p>
+      <p class="next">
+        <mark>$ backstop init</mark> - создание базового конфига
+      </p>
+    </section>
+    <section class="slide">
+      <h2>Использование</h2><br>
+      <p class="next">
+        <mark>$ backstop reference</mark> - создание эталонной картинки
+      </p>
+      <p class="next">
+        <mark>$ backstop test</mark> - запуск теста
+      </p>
+      <p class="next">
+        <mark>$ backstop approve</mark> - замена эталона тестируемой картинкой
+      </p>
+    </section>
+    <section class="slide"><img class="cover" src="./img/test_example.jpg" alt="bakstop_test_example"></section>
+    <section class="slide backstopjs_header-sub1">
+      <h2 class="shout">Настройка</h2>
+    </section>
+    <section class="slide">
+      <h2>backstop.json</h2>
+      <pre><code>{</code><code class="mark next">  "id": "prod_test",</code><code>  "viewports": [...]</code><code>  "scenarios": [...]</code><code>  "paths": {...}</code><code class="mark next">  "engine": "chrome",//- "phantomjs", "slimerjs"</code><code>  ....</code></pre>
+    </section>
+    <section class="slide">
+      <h2>backstop.json</h2><br>
+      <pre><code class="mark next">  "onBeforeScript": "chromy/onBefore.js",</code><code class="mark next">  "onReadyScript": "chromy/onReady.js",</code><code class="mark next">  "report": ["browser"], //- "CI"</code><code class="mark next">  "debugWindow": false</code><code>}</code></pre>
+    </section>
+    <section class="slide">
+      <h2>onBeforeScript, onReadyScript</h2><br>
+      <pre><code>module.exports = function(chromy, scenario, vp) {</code><code class="mark next">  // chromy – Chromy instance</code><code class="mark next">  // scenario object</code><code class="mark next">  // vp – viewport obj</code><code>  };</code></pre>
+    </section>
+    <section class="slide">
+      <h2>Viewports</h2>
+      <pre><code>"viewports": [</code><code>  {</code><code class="mark next">    "name": "desktop_mdpi",</code><code class="mark next">    "width": 1280,</code><code class="mark next">    "height": 800</code><code>  },</code><code>  ...</code><code>]</code></pre>
+    </section>
+    <section class="slide">
+      <h2>Scenarios</h2>
+      <pre><code>"scenarios": [</code><code>  {</code><code class="mark next">    "label": "test_page",</code><code class="mark next">    "url": "website.com",</code><code>    //--</code><code class="mark next">    "url": "..local_folder/index.html",</code><code class="mark next">    "referenceUrl": "stage.website.com",</code><code>    ...</code></pre>
+    </section>
+    <section class="slide">
+      <h2>Scenarios</h2>
+      <pre><code class="mark next">  "selectors": [</code><code class="mark next">    "#menu",</code><code class="mark next">    ".hero"</code><code class="mark next">    "header"</code><code>  ],</code><code>  ...</code></pre>
+    </section>
+    <section class="slide">
+      <h2>Scenarios</h2>
+      <pre><code class="mark next">    "hideSelectors": [".hide_on_test"],</code><code class="mark next">    "removeSelectors": [".remove_on_test"],</code><code class="mark next">    "delay": 500,</code><code class="mark next">    "misMatchThreshold" : 0.1,</code><code>  }</code><code>]</code></pre>
+    </section>
+    <section class="slide backstopjs_header-sub2">
+      <h2 class="shout">DEMO</h2>
+    </section>
+    <section class="slide">
+      <h2>BackstopJS</h2><br>
+      <ul>
+        <li class="next">Быстро настраивается</li>
+        <li class="next">Тестирование отдельных блоков</li>
+        <li class="next">Выполнение сценариев пользователя через Casper JS или ChromyJS</li>
+        <li class="next">CI интеграция</li>
+      </ul>
+    </section>
+    <section class="slide link-slide">
+      <div class="half contacts">
+        <p class="name">Александр Павлыщ</p>
+        <p class="twitter"><a class="default_link" href="https://twitter.com/lokdawn80">@lokdawn80</a></p>
+        <p class="email"><a class="default_link" href="mailto:lokdawn80@gmail.com">lokdawn80@gmail.com</a></p>
+        <p class="skype"><a class="default_link" href="skype:oleksandr.pavlishch?call">skype: oleksandr.pavlishch</a></p>
+      </div>
+      <p><a class="link-slide_link" href="https://oleksandrpavlyshch.github.io/visual_regression_testing_with_backstopjs-kharkivjs/" target="blank">https://goo.gl/xFKspD</a></p>
+    </section>
+    <div class="progress"></div>
+    <p class="badge"><a href="https://github.com/OleksandrPavlyshch" target="_blank">Fork me on GitHub</a></p>
+    <!-- bower:js-->
+    <!-- endbower-->
+    <script src="js/vendor/shower.min.js"></script>
+    <script src="js/vendor/highlight.pack.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
